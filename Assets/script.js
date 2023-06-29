@@ -16,23 +16,17 @@ function writePassword() {
 
 // Generates Random Characters for Password
 function generatePassword(passwordLength) {
-  // console.log(passwordLength);
   const isLowercase = confirm("Does your password contain lowercase letters?");
-  // console.log(isLowercase);
   const isUppercase = confirm("Does your password contain uppercase letters?");
-  // console.log(isUppercase);
   const isNumber = confirm("Does your password contain numbers?");
-  // console.log(isNumber);
   const isSpecial = confirm("Does your password contain special characters?");
-  // console.log(isSpecial);
 
   var lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
   var uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var numChars = "0123456789";
   var specialChars = "!@#$%^&*()";
-
   var password = "";
-  console.log(`password: ${password}`);
+
   for (var i = 0; i <= passwordLength; i++) {
     if (isLowercase && password.length < passwordLength) {
       var randomNumber = Math.floor(Math.random() * lowercaseChars.length);
@@ -50,10 +44,8 @@ function generatePassword(passwordLength) {
       var randomNumber = Math.floor(Math.random() * specialChars.length);
       password += specialChars.substring(randomNumber, randomNumber + 1);
     }
-
   }
-  console.log(`password: ${password}`);
-  console.log(`password.length: ${password.length}`);
+
   return password;
 }
 
